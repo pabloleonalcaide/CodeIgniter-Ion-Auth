@@ -347,14 +347,10 @@ class Ion_auth_model extends CI_Model
 			$db_password =  $salt . substr(sha1($salt . $password), 0, -$this->salt_length);
 		}
 
-		if($db_password == $hash_password_db->password)
-		{
+		if($db_password == $hash_password_db->password){
 			return TRUE;
 		}
-		else
-		{
 			return FALSE;
-		}
 	}
 
 	/**
